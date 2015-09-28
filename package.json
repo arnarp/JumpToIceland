@@ -1,0 +1,20 @@
+{
+  "name": "jump-to-iceland",
+  "version": "0.0.1",
+  "description": "Awsome booking site",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnarp/JumpToIceland.git"
+  },
+  "author": "Arnar Birgisson",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/arnarp/JumpToIceland/issues"
+  },
+  "homepage": "https://github.com/arnarp/JumpToIceland#readme",
+  "private": true
+}
