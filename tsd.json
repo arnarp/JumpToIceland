@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "gulp-sass/gulp-sass.d.ts": {
+      "commit": "ebc69904eb78f94030d5d517b42db20867f679c0"
+    },
+    "node/node.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "ebc69904eb78f94030d5d517b42db20867f679c0"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "ebc69904eb78f94030d5d517b42db20867f679c0"
+    },
+    "q/Q.d.ts": {
+      "commit": "ebc69904eb78f94030d5d517b42db20867f679c0"
+    },
+    "gulp-inject/gulp-inject.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "vinyl/vinyl.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "gulp-if/gulp-if.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "gulp-util/gulp-util.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "chalk/chalk.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "through2/through2.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    }
+  }
+}

@@ -22,4 +22,4 @@ bower_components/
 .tmp
 
 # All js files
-*.js
+src/**/*.js
