@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Awsome booking site",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "postinstall": "npm run tsd",
+    "tsd": "tsd link"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,15 @@
     "gulp-inject": "^3.0.0",
     "gulp-order": "^1.1.1",
     "gulp-sass": "^2.0.4",
+    "gulp-tslint": "^3.3.0",
     "gulp-util": "^3.0.6",
     "node-sass": "^3.3.3",
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "wiredep": "^2.2.2"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.38",
+    "systemjs": "^0.19.3",
+    "traceur": "0.0.91"
   }
 }

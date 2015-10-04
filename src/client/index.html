@@ -7,19 +7,23 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Jump to Iceland</title>
 
-	<!-- build:css styles/app.css -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- endbuild -->
+	<!-- bower:css -->
+	<!-- endbower -->
 
-<!--	<script src="node_modules/traceur/bin/traceur-runtime.js"></script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/src/client/styles/main.css">
+    <!-- endinject -->
+
+	<script src="node_modules/traceur/bin/traceur-runtime.js"></script>
 	<script src="node_modules/systemjs/dist/system.src.js"></script>
 	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-	<script src="node_modules/angular2/bundles/router.dev.js"></script>-->
+	<script src="node_modules/angular2/bundles/router.dev.js"></script>
 </head>
 
 <body>
 	<jti>Loading...</jti>
+	<!-- bower:js -->
+	<!-- endbower -->
 	<script>
 		System.config({
       packages: {'src': {defaultExtension: 'js'}}

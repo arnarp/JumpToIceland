@@ -7,53 +7,58 @@ var Tasks = {
     Sass: 'sass',
     // Task that watches src sass files and compiles
     SassWatch: 'sass:watch',
+    // Task that injects styles into index.html
+    WireStyles: 'wire:styles',
+    // Task that wired bower dependencies into index.html
+    WireBower: 'wire:bower',
+    // Lint all custom TypeScript files
+    TsLint: 'ts:lint'
 }
 
-var config = require('./gulp.config')();
+//var config = require('./gulp.config')();
+import {config} from './gulp.config';
 import gulp = require('gulp');
 import sass = require('gulp-sass');
 import path = require('path');
 import cp = require('child_process');
-import * from './gulp.helpers';
+import inject = require('gulp-inject');
+import { log } from './gulp.helpers';
+import tslint = require('gulp-tslint');
 
 gulp.task(Tasks.Dev, [Tasks.SassWatch]);
 
 gulp.task(Tasks.Sass, function() {
-    gulp.src(config.sass)
+    gulp.src(config.client.sass)
         .pipe(sass())
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.client.styles));
 });
 
 gulp.task(Tasks.SassWatch, function() {
-    gulp.watch(config.sass, [Tasks.Sass]);
+    gulp.watch(config.client.sass, [Tasks.Sass]);
 });
 
-gulp.task('inject', [Tasks.Sass], function() {
-
+gulp.task(Tasks.WireStyles, [Tasks.Sass], function() {
     log('Wire up css into the html, after files are ready');
+    var target = gulp.src(config.client.index);
+    var sources = gulp.src([config.client.css], { read: false });
 
-    return gulp
-        .src(config.index)
-        .pipe(inject(config.css))
-        .pipe(gulp.dest(config.client));
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest(config.client.root));
 });
+
+gulp.task(Tasks.WireBower, function() {
+    var wiredep = require('wiredep');
+    gulp.src(config.client.index)
+        .pipe(wiredep())
+        .pipe(gulp.dest(config.client.root));
+});
+
+gulp.task(Tasks.TsLint, function() {
+    return gulp
+        .src(config.allTypeScript)
+        .pipe(tslint())
+        .pipe(tslint.report('prose'));
+});
+
 
 module.exports = gulp;
-
-function runTSC(directory: string, done: Function) {
-    var tscjs = path.join(process.cwd(),
-        `${config.nodeModules}/typescript/lib/tsc.js`);
-    var childProcess = cp.spawn('tsc', ['-p', directory + '/.'],
-        { cwd: process.cwd() });
-    childProcess.stdout.on('data', function (data: any) {
-        // Ticino will read the output
-        console.log(data.toString());
-    });
-    childProcess.stderr.on('data', function (data: any) {
-        // Ticino will read the output
-        console.log(data.toString());
-    });
-    childProcess.on('close', function () {
-        done();
-    });
-}

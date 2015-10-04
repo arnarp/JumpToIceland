@@ -1,12 +1,20 @@
-module.exports = function() {
-	var client = './src/client';
-	var temp = './.tmp';
-	var nodeModules = './node_modules';
+export class config {
+	public nodeModules = './node_modules';
+	static src = './src';
 
-	var config = {
-		sass: `${client}/styles/main.scss`,
-		temp: temp,
-		nodeModules: nodeModules
+	static clientSrc = `${config.src}/client`;
+	static clientStyles = `${config.clientSrc}/styles`;
+
+	static client = {
+		root: config.clientSrc,
+		styles: config.clientStyles,
+		sass: `${config.clientStyles}/**/*.scss`,
+		css: `${config.clientStyles}/**/*.css`,
+		index: `${config.clientSrc}/index.html`,
+		typeScript: `${config.clientSrc}/**/*.ts`
 	};
-	return config;
+
+	static allTypeScript = [
+		config.client.typeScript
+	];
 }
