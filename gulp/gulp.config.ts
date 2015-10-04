@@ -11,11 +11,13 @@ export class config {
 		sass: `${config.clientStyles}/**/*.scss`,
 		css: `${config.clientStyles}/**/*.css`,
 		index: `${config.clientSrc}/index.html`,
-		typeScript: `${config.clientSrc}/**/*.ts`
+		typeScript: `${config.clientSrc}/**/*.ts`,
+		tsConfig: `${config.clientSrc}/tsconfig.json`
 	};
 
 	static gulp = {
-		typeScript: './gulp/*.ts'
+		typeScript: './gulp/*.ts',
+		tsConfig: './gulp/tsconfig.json'
 	};
 
 	static allTypeScript = [

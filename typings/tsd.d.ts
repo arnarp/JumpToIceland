@@ -14,3 +14,5 @@
 /// <reference path="vinyl/vinyl.d.ts" />
 /// <reference path="gulp-tslint/gulp-tslint.d.ts" />
 /// <reference path="systemjs/systemjs.d.ts" />
+/// <reference path="gulp-watch/gulp-watch.d.ts" />
+/// <reference path="gulp-plumber/gulp-plumber.d.ts" />

@@ -1,7 +1,7 @@
 'use strict';
 
 var Tasks = {
-    // Task that watches src files and compiles
+    // Task that watches src files, lints and compiles
     Dev: 'development',
     // Task that compiles sass files
     Sass: 'sass',
@@ -14,27 +14,35 @@ var Tasks = {
     // Lint all custom TypeScript files
     TsLint: 'ts:lint'
 }
-
-//var config = require('./gulp.config')();
 import {config} from './gulp.config';
 import gulp = require('gulp');
 import sass = require('gulp-sass');
+var scsslint = require('gulp-scss-lint');
 import path = require('path');
 import cp = require('child_process');
 import inject = require('gulp-inject');
 import { log } from './gulp.helpers';
 import tslint = require('gulp-tslint');
+import watch = require('gulp-watch');
+import plumber = require('gulp-plumber');
 
 gulp.task(Tasks.Dev, [Tasks.SassWatch]);
 
 gulp.task(Tasks.Sass, function() {
     gulp.src(config.client.sass)
+        .pipe(plumber())
+        .pipe(scsslint())
         .pipe(sass())
         .pipe(gulp.dest(config.client.styles));
 });
 
 gulp.task(Tasks.SassWatch, function() {
-    gulp.watch(config.client.sass, [Tasks.Sass]);
+    watch(config.client.sass, { readDelay: 100, events: ['add', 'unlink'] }, function() {
+        gulp.start(Tasks.WireStyles);
+    });
+    watch(config.client.sass, { readDelay: 100, events: ['change'] }, function() {
+        gulp.start(Tasks.Sass);
+    });
 });
 
 gulp.task(Tasks.WireStyles, [Tasks.Sass], function() {
