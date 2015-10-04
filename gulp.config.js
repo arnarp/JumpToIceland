@@ -1,26 +1,27 @@
-var config = (function () {
-    function config() {
+var Config = (function () {
+    function Config() {
         this.nodeModules = './node_modules';
     }
-    config.src = './src';
-    config.clientSrc = config.src + "/client";
-    config.clientStyles = config.clientSrc + "/styles";
-    config.client = {
-        root: config.clientSrc,
-        styles: config.clientStyles,
-        sass: config.clientStyles + "/**/*.scss",
-        css: config.clientStyles + "/**/*.css",
-        index: config.clientSrc + "/index.html",
-        typeScript: config.clientSrc + "/**/*.ts"
+    Config.src = './src';
+    Config.clientSrc = Config.src + "/client";
+    Config.clientStyles = Config.clientSrc + "/styles";
+    Config.client = {
+        root: Config.clientSrc,
+        styles: Config.clientStyles,
+        sass: Config.clientStyles + "/**/*.scss",
+        css: Config.clientStyles + "/**/*.css",
+        index: Config.clientSrc + "/index.html",
+        typeScript: Config.clientSrc + "/**/*.ts",
+        tsConfig: Config.clientSrc + "/tsconfig.json"
     };
-    config.gulp = {
-        typeScript: './gulp/*.ts'
+    Config.gulp = {
+        typeScript: './gulp/*.ts',
+        tsConfig: './gulp/tsconfig.json'
     };
-    config.allTypeScript = [
-        config.client.typeScript,
-        config.gulp.typeScript
+    Config.allTypeScript = [
+        Config.client.typeScript,
+        Config.gulp.typeScript
     ];
-    return config;
+    return Config;
 })();
-exports.config = config;
-//# sourceMappingURL=gulp.config.js.map
+exports.Config = Config;

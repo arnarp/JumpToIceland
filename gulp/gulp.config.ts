@@ -1,18 +1,18 @@
-export class config {
+export class Config {
 	public nodeModules = './node_modules';
 	static src = './src';
 
-	static clientSrc = `${config.src}/client`;
-	static clientStyles = `${config.clientSrc}/styles`;
+	static clientSrc = `${Config.src}/client`;
+	static clientStyles = `${Config.clientSrc}/styles`;
 
 	static client = {
-		root: config.clientSrc,
-		styles: config.clientStyles,
-		sass: `${config.clientStyles}/**/*.scss`,
-		css: `${config.clientStyles}/**/*.css`,
-		index: `${config.clientSrc}/index.html`,
-		typeScript: `${config.clientSrc}/**/*.ts`,
-		tsConfig: `${config.clientSrc}/tsconfig.json`
+		root: Config.clientSrc,
+		styles: Config.clientStyles,
+		sass: `${Config.clientStyles}/**/*.scss`,
+		css: `${Config.clientStyles}/**/*.css`,
+		index: `${Config.clientSrc}/index.html`,
+		typeScript: `${Config.clientSrc}/**/*.ts`,
+		tsConfig: `${Config.clientSrc}/tsconfig.json`
 	};
 
 	static gulp = {
@@ -21,7 +21,7 @@ export class config {
 	};
 
 	static allTypeScript = [
-		config.client.typeScript,
-		config.gulp.typeScript
+		Config.client.typeScript,
+		Config.gulp.typeScript
 	];
 }

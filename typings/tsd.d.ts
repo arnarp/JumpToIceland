@@ -16,3 +16,5 @@
 /// <reference path="systemjs/systemjs.d.ts" />
 /// <reference path="gulp-watch/gulp-watch.d.ts" />
 /// <reference path="gulp-plumber/gulp-plumber.d.ts" />
+/// <reference path="gulp-typescript/gulp-typescript.d.ts" />
+/// <reference path="gulp-sourcemaps/gulp-sourcemaps.d.ts" />

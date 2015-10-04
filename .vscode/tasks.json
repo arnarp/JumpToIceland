@@ -12,7 +12,7 @@
     "isShellCommand": true,
     "tasks": [
         {
-            "taskName": "development",
+            "taskName": "build",
             "isBuildCommand": true,
             "showOutput": "always",
             "isWatching": true
