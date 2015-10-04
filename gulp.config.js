@@ -13,8 +13,12 @@ var config = (function () {
         index: config.clientSrc + "/index.html",
         typeScript: config.clientSrc + "/**/*.ts"
     };
+    config.gulp = {
+        typeScript: './gulp/*.ts'
+    };
     config.allTypeScript = [
-        config.client.typeScript
+        config.client.typeScript,
+        config.gulp.typeScript
     ];
     return config;
 })();

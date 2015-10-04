@@ -14,7 +14,12 @@ export class config {
 		typeScript: `${config.clientSrc}/**/*.ts`
 	};
 
+	static gulp = {
+		typeScript: './gulp/*.ts'
+	};
+
 	static allTypeScript = [
-		config.client.typeScript
+		config.client.typeScript,
+		config.gulp.typeScript
 	];
 }

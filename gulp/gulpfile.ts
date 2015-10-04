@@ -57,7 +57,9 @@ gulp.task(Tasks.TsLint, function() {
     return gulp
         .src(config.allTypeScript)
         .pipe(tslint())
-        .pipe(tslint.report('prose'));
+        .pipe(tslint.report('prose', {
+            emitError: false,
+        }));
 });
 
 

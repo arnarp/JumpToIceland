@@ -46,7 +46,9 @@ gulp.task(Tasks.TsLint, function () {
     return gulp
         .src(gulp_config_1.config.allTypeScript)
         .pipe(tslint())
-        .pipe(tslint.report('prose'));
+        .pipe(tslint.report('prose', {
+        emitError: false,
+    }));
 });
 module.exports = gulp;
 //# sourceMappingURL=gulpfile.js.map
