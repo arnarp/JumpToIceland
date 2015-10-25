@@ -4,11 +4,11 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 //import {DashboardComponent} from './dashboard.component';
 
 @Component({
-    selector: 'jti'
+  selector: 'jti'
 })
 @View({
   template: `
-    <h1>Hello Angular</h1>
+    <h1>Jump to Iceland</h1>
     `,
   directives: [ROUTER_DIRECTIVES]
 })

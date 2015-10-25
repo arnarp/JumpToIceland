@@ -1,27 +1,56 @@
-var Config = (function () {
-    function Config() {
+var GulpConfig = (function () {
+    function GulpConfig() {
         this.nodeModules = './node_modules';
     }
-    Config.src = './src';
-    Config.clientSrc = Config.src + "/client";
-    Config.clientStyles = Config.clientSrc + "/styles";
-    Config.client = {
-        root: Config.clientSrc,
-        styles: Config.clientStyles,
-        sass: Config.clientStyles + "/**/*.scss",
-        css: Config.clientStyles + "/**/*.css",
-        index: Config.clientSrc + "/index.html",
-        typeScript: Config.clientSrc + "/**/*.ts",
-        tsConfig: Config.clientSrc + "/tsconfig.json"
+    GulpConfig.getPort = function () {
+        return process.env.PORT || GulpConfig.node.defaultPort;
     };
-    Config.gulp = {
+    GulpConfig.getNodeOptions = function (isDev) {
+        var options = {
+            script: GulpConfig.server.src + "/server.js",
+            env: {
+                'PORT': GulpConfig.getPort(),
+                'NODE_ENV': isDev ? 'dev' : 'build'
+            },
+            watch: [GulpConfig.server.src],
+            nodeArgs: ['--debug=5858']
+        };
+        return options;
+    };
+    GulpConfig.src = './src';
+    GulpConfig.clientSrc = GulpConfig.src + "/client";
+    GulpConfig.clientStyles = GulpConfig.clientSrc + "/styles";
+    GulpConfig.client = {
+        src: GulpConfig.clientSrc,
+        styles: GulpConfig.clientStyles,
+        sass: GulpConfig.clientStyles + "/**/*.scss",
+        css: GulpConfig.clientStyles + "/**/*.css",
+        index: GulpConfig.clientSrc + "/index.html",
+        typeScript: GulpConfig.clientSrc + "/**/*.ts",
+        javaScript: GulpConfig.clientSrc + "/**/*.js",
+        html: GulpConfig.clientSrc + "/**/*.html",
+        tsConfig: GulpConfig.clientSrc + "/tsconfig.json"
+    };
+    GulpConfig.serverSrc = GulpConfig.src + "/server";
+    GulpConfig.server = {
+        src: GulpConfig.serverSrc,
+        typeScript: GulpConfig.serverSrc + "/**/*.ts",
+        tsConfig: GulpConfig.serverSrc + "/tsconfig.json"
+    };
+    GulpConfig.node = {
+        defaultPort: '8001'
+    };
+    GulpConfig.gulp = {
         typeScript: './gulp/*.ts',
         tsConfig: './gulp/tsconfig.json'
     };
-    Config.allTypeScript = [
-        Config.client.typeScript,
-        Config.gulp.typeScript
+    GulpConfig.allTypeScript = [
+        GulpConfig.client.typeScript,
+        GulpConfig.gulp.typeScript,
+        GulpConfig.server.typeScript
     ];
-    return Config;
+    GulpConfig.browserReloadDelay = 1000;
+    return GulpConfig;
 })();
-exports.Config = Config;
+exports.GulpConfig = GulpConfig;
+//# sourceMappingURL=gulp.config.js.map

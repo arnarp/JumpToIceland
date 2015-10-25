@@ -9,7 +9,7 @@
       "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
     },
     "node/node.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "a6732bf1c03fd285bb01641b3a5a0129147cdb5b"
     },
     "gulp/gulp.d.ts": {
       "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
@@ -55,6 +55,33 @@
     },
     "gulp-sourcemaps/gulp-sourcemaps.d.ts": {
       "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "express/express.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "mime/mime.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "gulp-nodemon/gulp-nodemon.d.ts": {
+      "commit": "05557455c49043ff0189182e27c9e04403a70802"
+    },
+    "chokidar/chokidar.d.ts": {
+      "commit": "a6732bf1c03fd285bb01641b3a5a0129147cdb5b"
+    },
+    "browser-sync/browser-sync.d.ts": {
+      "commit": "a6732bf1c03fd285bb01641b3a5a0129147cdb5b"
     }
   }
 }
